@@ -1,0 +1,22 @@
+.placeholderCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: column;
+  border: 1px dashed #e0d8d2;
+  background: var(--color-bg-app);
+  border: 0.5px dashed #e0d8d2;
+  border-radius: 8px;
+  padding: 1.25rem 1rem;
+
+  & p {
+    color: #7e6f67;
+    font-size: 0.8rem;
+  }
+
+  & img {
+    width: 22px;
+    height: 22px;
+  }
+}

@@ -1,0 +1,91 @@
+.dropDown {
+  background-color: #fff;
+  border: 0.5px solid #e8e3de;
+  border-radius: 12px;
+  position: absolute;
+  box-shadow: 0 4px 20px #00000014;
+  top: 150%;
+  left: 0;
+  transform: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+}
+
+.dropDown .dropDownSection {
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  border-bottom: 0.5px solid #e8e3de;
+  padding: 0 0 16px;
+}
+
+.dropDown .dropDownSection:first-of-type {
+  padding-top: 16px;
+}
+
+.dropDown .dropDownSection h3 {
+  color: #80746f;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.dropDown .dropDownSection div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.dropDown .dropDownSection div button {
+  color: #6b5e57;
+  cursor: pointer;
+  background-color: #fff;
+  border: 0.5px solid #e8e3de;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.8rem;
+}
+
+.dropDownFooter {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 1.3rem 0;
+}
+
+.dropDownFooter .clearBtn,
+.applyBtn {
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-size: 0.9rem;
+  color: #fff;
+  background: #2f2118;
+  border: none;
+  transition:
+    background-color 0.15s,
+    transform 0.1s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #1a110d;
+  }
+
+  &:active {
+    background-color: #0f0a07;
+    transform: scale(0.98);
+  }
+}
+
+.dropDown .dropDownSection div .active {
+  color: #fff;
+  background-color: #2f2118;
+  border-color: #2f2118;
+}

@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../assets/fonts/Geist.woff2') format('woff2');
+  font-display: swap;
+}
+
+:root {
+  /* Text */
+  --color-text-black: #1a1412;
+  --color-text-description: #80746f;
+  --color-text-navigation: #6b5e57;
+  --color-text-brown-dark: #5c4332;
+  --color-text-green: #2d7a2d;
+  --color-text-category-title: #7a6b64;
+  --color-text-red: #c0392b;
+  --color-text-warning: #a05c00;
+
+  /* Presentation page */
+  --color-text-presentation-title: #0b0b0b;
+  --color-text-presentation-description: #52514e;
+  --color-text-product-count: #76746f;
+
+  /* Backgrounds */
+  --color-bg-button-brown: #2f2118;
+  --color-bg-coffee-light: #ece2da;
+  --color-bg-red-light: #fdecea;
+  --color-bg-warning: #fef3e2;
+  --color-bg-app: #f9f7f5;
+  --color-bg-in-stock: #e8f2e8;
+}
+
+body,
+html,
+#root {
+  width: 100%;
+  min-height: 100dvh;
+  font-family: 'Geist', Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-app);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

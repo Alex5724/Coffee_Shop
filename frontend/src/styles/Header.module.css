@@ -1,0 +1,138 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px 30px;
+  border-bottom: 1px solid #e8e0db;
+  height: 60px;
+  background-color: white;
+}
+
+.shop_title {
+  font-size: 1rem;
+  color: var(--color-bg-button-brown);
+  font-weight: 100;
+  letter-spacing: 0.5px;
+  & span {
+    text-shadow:
+      0.4px 0 currentColor,
+      -0.4px 0 currentColor;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+}
+
+li a {
+  text-decoration: none;
+  color: var(--color-text-navigation);
+}
+
+.navigation_links {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 0.9rem;
+
+  & li a {
+    transition: color 0.25s ease;
+  }
+
+  & li a:hover {
+    cursor: pointer;
+    color: #1a1412;
+  }
+}
+
+.add_btn {
+  background-color: var(--color-bg-button-brown);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.4rem;
+  transition:
+    background-color 0.15s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    background-color: #1a110d;
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.plus_icon {
+  width: 17px;
+  height: 17px;
+}
+
+.activeLink {
+  border-bottom: 2px solid #2f2118;
+  padding-bottom: 5px;
+  color: var(--color-text-black);
+}
+
+@media (max-width: 650px) {
+  .header {
+    padding: 5px 20px;
+  }
+  .footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 5px 30px;
+    border-bottom: 1px solid #e8e0db;
+    height: 60px;
+    background-color: white;
+  }
+
+  .footer nav {
+    width: 100%;
+  }
+
+  .navigation_links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 10px;
+    width: 100%;
+
+    & li a {
+      transition: color 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    & li a:hover {
+      cursor: pointer;
+      color: #1a1412;
+    }
+  }
+
+  .plus_icon,
+  .package_icon,
+  .menu_icon {
+    width: 20px;
+    height: 20px;
+  }
+}

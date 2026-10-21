@@ -1,0 +1,393 @@
+.addProductMain {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  padding-top: 40px;
+  gap: 2.5rem;
+}
+
+.addProductNavigation ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  align-items: center;
+  gap: 0.2rem;
+
+  & li {
+    font-size: 0.8rem;
+    color: var(--color-text-black);
+  }
+
+  & li:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & li:nth-child(2) img {
+    width: 17px;
+    height: 17px;
+  }
+
+  & li:first-of-type a {
+    color: #7e6f67;
+  }
+}
+
+.addProduct {
+  max-width: 850px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-areas:
+    'header header'
+    'form actions'
+    'form .';
+  gap: 1.3rem;
+  padding: 0 30px 30px;
+}
+
+.addProductHeader {
+  grid-area: header;
+}
+
+.addForm {
+  grid-area: form;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.basicDetailsFieldset {
+  width: 100%;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 0.5px solid #e8e3de;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  & legend {
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  & .category,
+  .name,
+  .description,
+  .price,
+  .quantity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 0.3rem;
+  }
+
+  & .priceAndQuantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  input,
+  textarea,
+  select {
+    border-radius: 15px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    color: var(--color-text-black);
+    background-color: var(--color-bg-app);
+    border: 0.5px solid #e8e3de;
+  }
+
+  textarea {
+    resize: none;
+    height: 100px;
+  }
+
+  label {
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    color: var(--color-text-navigation);
+    font-weight: 600;
+  }
+}
+
+select {
+  appearance: none;
+}
+
+.attributesFieldset {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 0.5px solid #e8e3de;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  & legend {
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  & .attributes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      gap: 0.3rem;
+    }
+  }
+
+  input,
+  select {
+    border-radius: 15px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    color: var(--color-text-black);
+    background-color: var(--color-bg-app);
+    border: 0.5px solid #e8e3de;
+    width: 100%;
+  }
+
+  label {
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    color: var(--color-text-navigation);
+    font-weight: 600;
+    width: 100%;
+  }
+}
+
+.addActionsSection {
+  grid-area: actions;
+  background-color: white;
+  border: 0.5px solid #e8e3de;
+  border-radius: 15px;
+  padding: 1.8rem 1.3rem;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 11px;
+
+  & h2 {
+    font-size: 0.8rem;
+    color: var(--color-text-description);
+    letter-spacing: 1px;
+    width: 100%;
+    padding-bottom: 0.5rem;
+  }
+
+  & button:first-of-type {
+    width: 100%;
+    color: white;
+    background-color: var(--color-bg-button-brown);
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    transition:
+      background-color 0.15s ease,
+      transform 0.15s ease;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #1a110d;
+    }
+
+    &:active {
+      background-color: #0f0a07;
+      transform: scale(0.98);
+    }
+
+    & .editSaveIcon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  & button:last-of-type {
+    width: 100%;
+    color: var(--color-text-navigation);
+    text-shadow:
+      -0.1px 0 currentColor,
+      0.1px 0 currentColor;
+    background-color: white;
+    border: 0.5px solid #e8e3de;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    transition:
+      background-color 0.15s ease,
+      transform 0.15s ease;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #f9f7f5;
+    }
+
+    &:active {
+      background-color: #f0ebe6;
+      transform: scale(0.98);
+    }
+
+    & .editCancelIcon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.activeLink:hover {
+  text-decoration: underline;
+}
+
+.errorMessage {
+  position: static;
+  color: red;
+  font-size: 0.7rem;
+}
+
+input:focus:valid,
+textarea:focus:valid {
+  border: 2px solid green;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.2);
+}
+
+input:focus:invalid,
+textarea:focus:invalid {
+  border: 2px solid red;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+input:user-valid,
+textarea:user-valid {
+  border: 2px solid green;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.2);
+}
+
+input:user-invalid,
+textarea:user-invalid {
+  border: 2px solid red;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .addProductMain {
+    padding-top: 25px;
+  }
+
+  .addActionsSection {
+    margin: 0;
+  }
+
+  .addForm {
+    gap: 0.5rem;
+  }
+
+  .addProduct {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'header'
+      'form'
+      'actions';
+    gap: 0.7rem;
+    max-width: 500px;
+  }
+
+  .basicDetailsFieldset {
+    & legend {
+      font-size: 16px;
+    }
+
+    input,
+    textarea,
+    select {
+      font-size: 12px;
+    }
+
+    label {
+      font-size: 12px;
+    }
+  }
+
+  .attributesFieldset {
+    & legend {
+      font-size: 16px;
+    }
+
+    input,
+    select {
+      font-size: 12px;
+    }
+
+    label {
+      font-size: 12px;
+    }
+  }
+
+  .addActionsSection {
+    & h2 {
+      font-size: 12px;
+    }
+
+    & button:first-of-type {
+      font-size: 12px;
+
+      & .editSaveIcon {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    & button:last-of-type {
+      font-size: 12px;
+
+      & .editCancelIcon {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}

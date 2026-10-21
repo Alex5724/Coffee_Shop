@@ -1,0 +1,133 @@
+.dropDownDialog {
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 85dvh;
+  margin: auto;
+  padding: 0;
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+  border: none;
+  border-radius: 16px;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+}
+
+.dropDownDialog.open {
+  transform: translateY(0);
+}
+
+.dropDownDialog.close {
+  transform: translateY(100%);
+}
+
+.dropDown {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropDownHeader {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 32px 0 16px 0;
+  border-bottom: 0.5px solid #e8e3de;
+
+  & button {
+    border: none;
+    background-color: white;
+
+    & img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  & h2 {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+}
+
+.dropDown .dropDownSection {
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  border-bottom: 0.5px solid #e8e3de;
+  padding: 0 0 16px;
+}
+
+.dropDown .dropDownSection:first-of-type {
+  padding-top: 16px;
+}
+
+.dropDown .dropDownSection h3 {
+  color: #80746f;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.dropDown .dropDownSection div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.dropDown .dropDownSection div button {
+  color: #6b5e57;
+  cursor: pointer;
+  background-color: #fff;
+  border: 0.5px solid #e8e3de;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.8rem;
+}
+
+.dropDownFooter {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 0 16px;
+  gap: 1rem;
+}
+
+.dropDownFooter .clearBtn,
+.applyBtn {
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-size: 0.9rem;
+  color: #fff;
+  background: #2f2118;
+  border: none;
+  flex: 1;
+  transition:
+    background-color 0.15s,
+    transform 0.1s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #1a110d;
+  }
+
+  &:active {
+    background-color: #0f0a07;
+    transform: scale(0.98);
+  }
+}
+
+.dropDown .dropDownSection div .active {
+  color: #fff;
+  background-color: #2f2118;
+  border-color: #2f2118;
+}
