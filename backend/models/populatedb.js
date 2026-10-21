@@ -1,0 +1,36 @@
+require("dotenv").config();
+const { Client } = require("pg");
+
+async function main() {
+  const SQL = `
+CREATE TABLE IF NOT EXISTS category (
+    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT NOT NULL
+    );
+    
+CREATE TABLE IF NOT EXISTS product (
+    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(100) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    description TEXT NOT NULL,
+    available BOOLEAN DEFAULT TRUE,
+    quantity INTEGER NOT NULL DEFAULT 0,
+    origin VARCHAR(100) NOT NULL,
+    roast_level VARCHAR(50) NOT NULL,
+    format VARCHAR(50) NOT NULL,
+    weight INTEGER NOT NULL,
+    category_id INTEGER NOT NULL,
+    FOREIGN KEY (category_id) REFERENCES category(id)
+);`;
+
+  const client = new Client({
+    connectionString: `${process.env.DB_URL}`,
+  });
+
+  await client.connect();
+  await client.query(SQL);
+  await client.end();
+}
+
+main();
