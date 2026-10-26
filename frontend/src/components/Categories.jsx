@@ -17,7 +17,7 @@ export default function Categories() {
     }
 
     loadCategories();
-  }, []);
+  }, [API_URL]);
 
   const icons = {
     Coffee: coffeeIcon,
