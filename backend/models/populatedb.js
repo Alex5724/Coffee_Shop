@@ -14,12 +14,14 @@ CREATE TABLE IF NOT EXISTS product (
     name VARCHAR(100) NOT NULL,
     price DECIMAL(10,2) NOT NULL,
     description TEXT NOT NULL,
-    available BOOLEAN DEFAULT TRUE,
+    available VARCHAR(50) NOT NULL,
     quantity INTEGER NOT NULL DEFAULT 0,
     origin VARCHAR(100) NOT NULL,
     roast_level VARCHAR(50) NOT NULL,
     format VARCHAR(50) NOT NULL,
     weight INTEGER NOT NULL,
+    type VARCHAR(50),
+    caffeine_level VARCHAR(50),
     category_id INTEGER NOT NULL,
     FOREIGN KEY (category_id) REFERENCES category(id)
 );`;
