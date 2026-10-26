@@ -101,6 +101,7 @@ li a {
     min-height: 60px;
     height: auto;
     background-color: white;
+    margin-top: auto;
   }
 
   .footer nav {
