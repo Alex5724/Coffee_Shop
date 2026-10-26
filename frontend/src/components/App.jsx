@@ -1,4 +1,5 @@
 import '../styles/App.css';
+import { products_filters } from '../constants/productsFilters';
 import Header from './Header';
 import Footer from './Footer';
 import { Outlet } from 'react-router';
@@ -16,28 +17,6 @@ function App() {
     mediumScreen: window.innerWidth <= 650,
     smallScreen: window.innerWidth <= 600,
   });
-
-  const products_filters = {
-    Coffee: {
-      available: 'available',
-      origin: 'origin',
-      roast_level: 'roast_level',
-      format: 'format',
-      weight: 'weight',
-    },
-    Tea: {
-      available: 'available',
-      type: 'type',
-      origin: 'origin',
-      format: 'format',
-      caffeine_level: 'caffeine_level',
-      weight: 'weight',
-    },
-    'All Products': {
-      available: 'available',
-      category_name: 'category_name',
-    },
-  };
 
   useEffect(() => {
     const handleResize = () => {
