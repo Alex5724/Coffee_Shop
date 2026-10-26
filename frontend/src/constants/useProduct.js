@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export default function useProduct(id) {
+  const API_URL = import.meta.env.VITE_API_URL;
   const [product, setProduct] = useState(null);
   useEffect(() => {
     if (!id) return;
@@ -9,10 +10,9 @@ export default function useProduct(id) {
 
     async function loadProduct() {
       try {
-        const response = await fetch(
-          `http://localhost:3000/products/product/${id}`,
-          { signal: controller.signal },
-        );
+        const response = await fetch(`${API_URL}}/products/product/${id}`, {
+          signal: controller.signal,
+        });
 
         if (!response.ok) {
           throw new Error(`Request failed: ${response.status}`);
