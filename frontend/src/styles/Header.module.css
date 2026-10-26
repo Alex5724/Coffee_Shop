@@ -98,7 +98,8 @@ li a {
     flex-direction: row;
     padding: 5px 30px;
     border-bottom: 1px solid #e8e0db;
-    height: 60px;
+    min-height: 60px;
+    height: auto;
     background-color: white;
   }
 
