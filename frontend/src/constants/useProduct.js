@@ -27,7 +27,7 @@ export default function useProduct(id) {
 
     loadProduct();
     return () => controller.abort();
-  }, [id]);
+  }, [id, API_URL]);
 
   return product;
 }
