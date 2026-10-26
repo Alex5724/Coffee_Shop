@@ -10,7 +10,7 @@ export default function useProduct(id) {
 
     async function loadProduct() {
       try {
-        const response = await fetch(`${API_URL}}/products/product/${id}`, {
+        const response = await fetch(`${API_URL}/products/product/${id}`, {
           signal: controller.signal,
         });
 
