@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS product (
     available VARCHAR(50) NOT NULL,
     quantity INTEGER NOT NULL DEFAULT 0,
     origin VARCHAR(100) NOT NULL,
-    roast_level VARCHAR(50) NOT NULL,
+    roast_level VARCHAR(50),
     format VARCHAR(50) NOT NULL,
     weight INTEGER NOT NULL,
     type VARCHAR(50),
