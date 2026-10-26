@@ -24,7 +24,12 @@ CREATE TABLE IF NOT EXISTS product (
     caffeine_level VARCHAR(50),
     category_id INTEGER NOT NULL,
     FOREIGN KEY (category_id) REFERENCES category(id)
-);`;
+);
+
+INSERT INTO category (name, description)
+VALUES
+  ('Coffee', 'Single-origin and blended coffees in a range of roast levels and formats, sourced from farms around the world.'),
+  ('Tea', 'Loose leaf and bagged teas spanning green, black, white, oolong, and herbal varieties from renowned growing regions.');`;
 
   const client = new Client({
     connectionString: process.argv[2] || process.env.DB_URL,
