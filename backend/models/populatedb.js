@@ -25,7 +25,8 @@ CREATE TABLE IF NOT EXISTS product (
 );`;
 
   const client = new Client({
-    connectionString: `${process.env.DB_URL}`,
+    connectionString: process.argv[2] || process.env.DB_URL,
+    ssl: { rejectUnauthorized: false },
   });
 
   await client.connect();
