@@ -5,10 +5,11 @@ import { useState, useEffect } from 'react';
 import GenerateCategories from './GenerateCategories';
 
 export default function Categories() {
+  const API_URL = import.meta.env.VITE_API_URL;
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     async function loadCategories() {
-      const responde = await fetch(`http://localhost:3000/categories`);
+      const responde = await fetch(`${API_URL}/categories`);
 
       const data = await responde.json();
 

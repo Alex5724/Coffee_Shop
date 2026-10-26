@@ -12,6 +12,7 @@ import Validate from '../constants/validators';
 import AttributesPlaceholder from './AttributesPlaceholder';
 
 export default function AddProductPage() {
+  const API_URL = import.meta.env.VITE_API_URL;
   const [category, setCategory] = useState(null);
   const [selectionMeniu, setSelectionMeniu] = useState(null);
   const [errorMessage, setErrorMessage] = useState({
@@ -43,7 +44,7 @@ export default function AddProductPage() {
     try {
       const form = e.currentTarget;
       const body = Object.fromEntries(new FormData(form).entries());
-      const response = await fetch('http://localhost:3000/products/new', {
+      const response = await fetch(`${API_URL}/products/new`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -10,6 +10,7 @@ import { statusMap } from '../constants/stockStatus';
 import { useNavigate } from 'react-router';
 
 export default function ProductPage() {
+  const API_URL = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
   const { id } = useParams();
   const product = useProduct(id);
@@ -19,13 +20,10 @@ export default function ProductPage() {
   const category = categoryMap[product.category_id];
 
   async function handleDelete() {
-    const response = await fetch(
-      `http://localhost:3000/products/${id}/delete`,
-      {
-        method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' },
-      },
-    );
+    const response = await fetch(`${API_URL}/products/${id}/delete`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    });
 
     if (!response.ok) {
       throw new Error(`The product couldn't be deleted.`);

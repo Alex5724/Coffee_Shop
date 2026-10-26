@@ -10,6 +10,7 @@ export default function SearchComponent({
   filterIcon,
   name,
 }) {
+  const API_URL = import.meta.env.VITE_API_URL;
   const [search, setSearch] = useState('');
   const [showMeniu, setShowMeniu] = useState(false);
 
@@ -36,8 +37,8 @@ export default function SearchComponent({
     async function loadFilteredProducts() {
       try {
         const baseUrl = id
-          ? `http://localhost:3000/products/${id}`
-          : 'http://localhost:3000/products';
+          ? `${API_URL}/products/${id}`
+          : `${API_URL}/products`;
 
         const url = debouncedSearched
           ? `${baseUrl}?search=${encodeURIComponent(debouncedSearched)}`

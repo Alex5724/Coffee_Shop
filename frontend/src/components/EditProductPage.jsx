@@ -13,6 +13,7 @@ import { selectionInput } from '../constants/selection';
 import Validate from '../constants/validators';
 
 export default function EditProductPage() {
+  const API_URL = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
   const { id } = useParams();
   const product = useProduct(id);
@@ -58,7 +59,7 @@ export default function EditProductPage() {
   async function handlePost(e) {
     e.preventDefault();
 
-    const response = await fetch(`http://localhost:3000/products/${id}/edit`, {
+    const response = await fetch(`${API_URL}/products/${id}/edit`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(editedProduct),
