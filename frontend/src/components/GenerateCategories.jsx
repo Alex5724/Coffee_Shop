@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
+import { icons } from '../constants/icons';
 
-export default function GenerateCategories({ categories, style, icons }) {
+export default function GenerateCategories({ categories, style }) {
   return (
     <>
       <ul className={style.categories_list}>

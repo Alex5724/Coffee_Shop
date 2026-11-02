@@ -45,6 +45,9 @@ export default function SearchComponent({
           : baseUrl;
 
         const response = await fetch(url, { signal: controller.signal });
+        if (!response.ok) {
+          throw new Error('There has been a problem.');
+        }
         const data = await response.json();
         setProducts(data);
       } catch (err) {
@@ -57,7 +60,7 @@ export default function SearchComponent({
     loadFilteredProducts();
 
     return () => controller.abort();
-  }, [debouncedSearched, id, setProducts]);
+  }, [debouncedSearched, id, setProducts, API_URL]);
 
   function toggleMenu() {
     setShowMeniu((isOpen) => !isOpen);

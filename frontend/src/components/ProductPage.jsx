@@ -20,16 +20,20 @@ export default function ProductPage() {
   const category = categoryMap[product.category_id];
 
   async function handleDelete() {
-    const response = await fetch(`${API_URL}/products/${id}/delete`, {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
-    });
+    try {
+      const response = await fetch(`${API_URL}/products/${id}/delete`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+      });
 
-    if (!response.ok) {
-      throw new Error(`The product couldn't be deleted.`);
+      if (!response.ok) {
+        throw new Error(`The product couldn't be deleted.`);
+      }
+
+      navigate(`/products/${categoryId}/${category.name}`);
+    } catch (error) {
+      console.error(error);
     }
-
-    navigate(`/products/${categoryId}/${category.name}`);
   }
 
   return (

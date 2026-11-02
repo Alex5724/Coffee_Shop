@@ -59,17 +59,21 @@ export default function EditProductPage() {
   async function handlePost(e) {
     e.preventDefault();
 
-    const response = await fetch(`${API_URL}/products/${id}/edit`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(editedProduct),
-    });
+    try {
+      const response = await fetch(`${API_URL}/products/${id}/edit`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(editedProduct),
+      });
 
-    if (!response.ok) {
-      throw new Error(`The chages couldn't be saved.`);
+      if (!response.ok) {
+        throw new Error(`The chage couldn't be saved.`);
+      }
+
+      navigate(`/products/${id}`);
+    } catch (error) {
+      console.error(error);
     }
-
-    navigate(`/products/${id}`);
   }
 
   return (
