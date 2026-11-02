@@ -5,6 +5,7 @@ import AllProducts from '../components/AllProducts';
 import ProductPage from '../components/ProductPage';
 import EditProductPage from '../components/EditProductPage';
 import AddProductPage from '../components/AddProductPage';
+import NotFoundPage from '../components/NotFoundPage';
 
 const routes = [
   {
@@ -20,6 +21,7 @@ const routes = [
       { path: 'products/:id/:name', element: <Products /> },
 
       { path: 'products/:id', element: <ProductPage /> },
+      { path: '*', element: <NotFoundPage /> },
     ],
   },
 ];
