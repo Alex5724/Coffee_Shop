@@ -1,28 +1,59 @@
-const { Router } = require('express');
+const { Router } = require("express");
 const router = Router();
 
 const {
+  validateProductCreate,
   validateProductEdit,
+  validateProductId,
+  validateProductRouteId,
+  validateCategoryId,
+  validateSearch,
   checkProductValidation,
-} = require('../middleware/productValidation');
+} = require("../middleware/productValidation");
+const productsController = require("../controllers/productsController");
 
-const productsController = require('../controllers/productsController');
+router.get(
+  "/",
+  validateSearch,
+  checkProductValidation,
+  productsController.getAllProducts,
+);
 
-router.get('/', productsController.getAllProducts);
+router.get(
+  "/:categoryId",
+  validateCategoryId,
+  validateSearch,
+  checkProductValidation,
+  productsController.getProducts,
+);
 
-router.get('/:categoryId', productsController.getProducts);
-
-router.get('/product/:productId', productsController.getProduct);
+router.get(
+  "/product/:productId",
+  validateProductId,
+  checkProductValidation,
+  productsController.getProduct,
+);
 
 router.patch(
-  '/:id/edit',
+  "/:id/edit",
+  validateProductRouteId,
   validateProductEdit,
   checkProductValidation,
   productsController.patchProduct,
 );
 
-router.delete('/:id/delete', productsController.deleteProduct);
+router.delete(
+  "/:id/delete",
+  validateProductRouteId,
+  checkProductValidation,
+  productsController.deleteProduct,
+);
 
-router.post('/new', productsController.postNewProduct);
+router.post(
+  "/new",
+  validateProductCreate,
+  checkProductValidation,
+  productsController.postNewProduct,
+);
 
 module.exports = router;
